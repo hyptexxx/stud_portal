@@ -1,0 +1,12 @@
+.selection{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 50px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.selection label{
+    margin: 0 auto;
+    padding: 15px 0;
+}

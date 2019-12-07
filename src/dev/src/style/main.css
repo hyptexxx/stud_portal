@@ -1,0 +1,8 @@
+@import "../../node_modules/normalize.css/normalize.css";
+
+@import "default/Default.css";
+@import "main/MainFrame.css";
+@import "main/leftSide/LeftSide.css";
+@import "main/rightSide/RightSide.css";
+@import "main/rightSide/entity/Entity.css";
+@import "main/rightSide/selection/Selection.css";

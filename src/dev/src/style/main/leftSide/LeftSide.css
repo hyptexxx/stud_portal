@@ -1,0 +1,19 @@
+#left-side{
+    height: 100%;
+    width: 400px;
+    background-color: #2f2f6b;
+}
+.left-side-menu-component{
+    height: 40px;
+    width: 100%;
+    color: #fff;
+    background-color: #52529a;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: inset 5px 0px white;
+}
+.left-side-menu-component span{
+    margin: 0 auto;
+}
