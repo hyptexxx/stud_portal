@@ -3,8 +3,8 @@
 import {main} from './moduels'
 import Vue from 'vue'
 
-import filters from './components/Filters'
-import articles from './components/Articles'
+
+import main_component from './components/Main'
 
 window.onload = () => {
     main()
@@ -18,8 +18,7 @@ window.onload = () => {
 // ----------------------component-section-------------------------------------->
 
 
-Vue.component('filters', filters);
-Vue.component('articles', articles);
+Vue.component('main-component', main_component);
 
 // ----------------------------------------------------------------------------->
 

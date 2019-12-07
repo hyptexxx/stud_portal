@@ -6,3 +6,17 @@
 @import "main/rightSide/RightSide.css";
 @import "main/rightSide/entity/Entity.css";
 @import "main/rightSide/selection/Selection.css";
+.main-font {
+    font-weight: 100;
+    font-family: main;
+    color: hsl(240, 39%, 30%);
+}
+.main-font-nav {
+    font-weight: 100;
+    font-family: main;
+    color: hsla(0, 0%, 100%, 0.7);
+}
+@font-face {
+    font-family: main;
+    src: url("../fonts/Roboto-Regular.ttf");
+}

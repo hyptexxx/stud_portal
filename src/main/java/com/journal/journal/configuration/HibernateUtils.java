@@ -1,5 +1,6 @@
 package com.journal.journal.configuration;
 
+import com.journal.journal.enity.article.model.Article;
 import com.journal.journal.enity.list_category.model.List_category;
 import com.journal.journal.enity.list_kafedr.model.List_kafedr;
 import com.journal.journal.enity.teacher.model.Teacher;
@@ -44,6 +45,7 @@ public class HibernateUtils {
                 configuration.addAnnotatedClass(Science_publication.class);
                 configuration.addAnnotatedClass(Users.class);
                 configuration.addAnnotatedClass(Vkr.class);
+                configuration.addAnnotatedClass(Article.class);
                 registryBuilder.applySettings(configuration.getProperties()).build();
                 sessionFactory = configuration.buildSessionFactory();
             } catch (Exception e) {

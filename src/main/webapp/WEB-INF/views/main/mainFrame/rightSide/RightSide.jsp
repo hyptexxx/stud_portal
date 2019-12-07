@@ -1,4 +1,3 @@
 <div class="right-side-content-conteiner" id="app">
-    <filters></filters>
-    <articles></articles>
+    <main-component></main-component>
 </div>

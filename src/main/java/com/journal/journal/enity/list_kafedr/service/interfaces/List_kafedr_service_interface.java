@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface List_kafedr_service_interface {
     List<List_kafedr> findAll();
+    List<List_kafedr> findAllByTeacherId(int id_teacher);
 }

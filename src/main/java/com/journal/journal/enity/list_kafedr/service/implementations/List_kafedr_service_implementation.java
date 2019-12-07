@@ -22,4 +22,9 @@ public class List_kafedr_service_implementation implements List_kafedr_service_i
     public List<List_kafedr> findAll() {
         return list_kafedr_dao_interface.findAll();
     }
+
+    @Override
+    public List<List_kafedr> findAllByTeacherId(int id_teacher) {
+        return list_kafedr_dao_interface.findAllByTeacherId(id_teacher);
+    }
 }
