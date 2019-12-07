@@ -1,5 +1,4 @@
-package com.journal.journal.enity.users.model;
-
+package com.journal.journal.enity.teacher.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,20 +12,17 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name="users")
-public class Users {
+@Table(name="teachers")
+public class Teacher {
 
     @Id
     @GeneratedValue
-    @Column(name = "user_id")
-    private int user_id;
+    @Column(name = "id_teacher")
+    private int id_teacher;
+
+    @Column(name = "id_n")
+    private int id_n;
 
     @Column(name = "fio")
     private String fio;
-
-    @Column(name = "id_napr")
-    private int id_napr;
-
-    @Column(name = "id_category")
-    private int id_category;
 }

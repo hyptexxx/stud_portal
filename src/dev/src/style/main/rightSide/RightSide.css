@@ -5,6 +5,7 @@
     box-sizing: border-box;
     overflow: auto;
     background-color: #fff;
+    box-shadow: -8px -1px 20px 1px #232344;
 }
 
 .right-side-content-conteiner{

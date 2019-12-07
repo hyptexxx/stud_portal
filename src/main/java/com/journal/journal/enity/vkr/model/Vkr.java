@@ -1,4 +1,4 @@
-package com.journal.journal.enity.users.model;
+package com.journal.journal.enity.vkr.model;
 
 
 import lombok.AllArgsConstructor;
@@ -7,26 +7,28 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Getter
 @Setter
-@Table(name="users")
-public class Users {
+@Table(name="vkr")
+public class Vkr {
 
     @Id
     @GeneratedValue
+    @Column(name = "id_vkr")
+    private int id_vkr;
+
+    @Column(name = "date_def")
+    private Date date_def;
+
     @Column(name = "user_id")
     private int user_id;
 
-    @Column(name = "fio")
-    private String fio;
 
-    @Column(name = "id_napr")
-    private int id_napr;
-
-    @Column(name = "id_category")
-    private int id_category;
+    @Column(name = "id_teacher")
+    private int id_teacher;
 }

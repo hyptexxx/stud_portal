@@ -23,11 +23,11 @@ public class MainController {
         return "Main";
     }
 
-    @RequestMapping(value = "/api/category", method = RequestMethod.POST)
-    @ResponseBody
-    public List<List_category> test(HttpSession httpSession){
-        return list_category_service_implementation.getAll();
-    }
+//    @RequestMapping(value = "/api/category", method = RequestMethod.POST)
+//    @ResponseBody
+//    public List<List_category> test(HttpSession httpSession){
+//        return list_category_service_implementation.getAll();
+//    }
 
 
 }
