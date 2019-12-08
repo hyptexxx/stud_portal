@@ -85,24 +85,16 @@
                 this.teacherFilter = document.getElementById('nr')
                 params.append('id_teacher', this.teacherFilter.value)
                 params.append('id_kaf', e.target.value)
-                axios.post('/api/refreshFilterNr', params).then(response => {
-                    this.nr = response.data
-                })
-                axios.post('/api/doFilter', params).then(response => {
-
-                })
+                axios.post('/api/refreshFilterNr', params).then(response => { this.nr = response.data })
+                axios.post('/api/doFilter', params).then(response => { this.Articles = response.data })
             },
             nrChange: function (e) {
                 let params = new URLSearchParams();
                 this.kafFilter = document.getElementById('kaf')
                 params.append('id_teacher', e.target.value)
                 params.append('id_kaf', this.kafFilter.value)
-                axios.post('/api/refreshFilterKaf', params).then(response => {
-                    this.kaf = response.data
-                })
-                axios.post('/api/doFilter', params).then(response => {
-
-                })
+                axios.post('/api/refreshFilterKaf', params).then(response => { this.kaf = response.data })
+                axios.post('/api/doFilter', params).then(response => { this.Articles = response.data })
             }
         },
         name: "main",
