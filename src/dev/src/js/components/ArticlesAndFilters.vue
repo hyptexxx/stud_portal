@@ -97,6 +97,6 @@
                 axios.post('/api/doFilter', params).then(response => { this.Articles = response.data })
             }
         },
-        name: "main",
+        name: "articlesandfilters",
     }
 </script>

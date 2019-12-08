@@ -6,7 +6,6 @@ import com.journal.journal.enity.list_kafedr.model.List_kafedr;
 import com.journal.journal.enity.list_kafedr.service.interfaces.List_kafedr_service_interface;
 import com.journal.journal.enity.teacher.model.Teacher;
 import com.journal.journal.enity.teacher.service.interfaces.Teacher_service_interface;
-import com.journal.journal.enity.users.service.interfaces.Users_service_interface;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -56,10 +55,8 @@ public class FiltersController {
         return id_kaf < 0 ? teacher_service_interface.findAll() : teacher_service_interface.findAllByKafedrId(id_kaf);
     }
 
-
     @PostMapping("/api/refreshFilterKaf")
-    public List<List_kafedr> refreshFilterKaf(@RequestParam("id_kaf") int id_kaf,
-                                              @RequestParam("id_teacher") int id_teacher) {
+    public List<List_kafedr> refreshFilterKaf(@RequestParam("id_kaf") int id_kaf, @RequestParam("id_teacher") int id_teacher) {
         return id_teacher < 0 ? list_kafedr_service_interface.findAll() : list_kafedr_service_interface.findAllByTeacherId(id_teacher);
     }
 }

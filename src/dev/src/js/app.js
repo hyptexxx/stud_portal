@@ -4,7 +4,9 @@ import {main} from './moduels'
 import Vue from 'vue'
 
 
-import main_component from './components/Main'
+import articlesandfilters from './components/ArticlesAndFilters'
+import Defends from './components/Defends'
+import Publications from './components/Publications'
 
 window.onload = () => {
     main()
@@ -18,7 +20,9 @@ window.onload = () => {
 // ----------------------component-section-------------------------------------->
 
 
-Vue.component('main-component', main_component);
+Vue.component('articlesandfilters', articlesandfilters);
+Vue.component('publications', Publications);
+Vue.component('defends', Defends);
 
 // ----------------------------------------------------------------------------->
 
