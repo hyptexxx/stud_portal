@@ -5,7 +5,7 @@
             <div class="right-side-content-filters-body">
                 <div class="selection">
                     <label class="main-font" for="kaf">кафедра</label>
-                    <select id="kaf" class="main-font entity-input" @change="kafChange($event)">
+                    <select id="kaf" class="main-font" @change="kafChange($event)">
                         <option class="main-font" value="-1">не выбрано</option>
                         <option class="main-font" v-for="item in kaf" :value="item.id_kafedr">
                             {{item.name}}
@@ -14,7 +14,7 @@
                 </div>
                 <div class="selection">
                     <label class="main-font" for="nr">научный руководитель</label>
-                    <select id="nr" class="main-font entity-input" @change="nrChange($event)">
+                    <select id="nr" class="main-font" @change="nrChange($event)">
                         <option class="main-font" value="-1">не выбрано</option>
                         <option class="main-font" v-for="item in nr" :value="item.id_teacher">
                             {{item.fio}}

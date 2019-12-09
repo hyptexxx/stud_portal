@@ -1,10 +1,10 @@
 .entity-input{
-    margin: 0 5px;
+    margin: 0px 30px;
     background-color: #0000;
-    border-bottom: 2px solid #2f2f6b;
+    border-bottom: 2px solid #d0d0eb;
     border-top: 0;
     border-left: 0;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     height: 30px;
     width: 100%;
     color: #2f2f6b;
@@ -13,9 +13,27 @@
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
+    text-align-last:center;
 }
 .entity{
     display: flex;
-    margin: 30px 0;
+    margin: 10px 0;
+    border-bottom: 14px solid #eeeeee;
     justify-content: center;
+}
+.selection select{
+    background-color: #0000;
+    border-bottom: 2px solid #d0d0eb;
+    border-top: 0;
+    border-left: 0;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 100%;
+    color: #2f2f6b;
+    text-align: center;
+    border-right: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    text-align-last:center;
 }
