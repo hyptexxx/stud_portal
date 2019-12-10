@@ -1,4 +1,4 @@
-package com.journal.journal.controllers.main.REST;
+package com.journal.journal.controllers.main.REST.init_requests_controllers;
 
 import com.journal.journal.enity.vkr_defends.model.Vkr_defends;
 import com.journal.journal.enity.vkr_defends.service.interfaces.Vkr_defends_service;

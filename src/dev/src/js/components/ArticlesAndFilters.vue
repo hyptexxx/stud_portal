@@ -72,7 +72,7 @@
             axios.post('/api/kaf').then(response => {
                 this.kaf = response.data
             })
-            axios.post('/api/nr').then(response => {
+            axios.post('/api/getNr').then(response => {
                 this.nr = response.data
             })
             axios.post('/api/getAllArticles').then(response => {

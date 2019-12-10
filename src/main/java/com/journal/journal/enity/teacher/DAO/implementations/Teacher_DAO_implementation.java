@@ -1,11 +1,9 @@
 package com.journal.journal.enity.teacher.DAO.implementations;
 
 import com.journal.journal.configuration.HibernateUtils;
-import com.journal.journal.enity.napr_podg.model.Napr_podg;
 import com.journal.journal.enity.teacher.DAO.interfaces.Teacher_DAO_interface;
 import com.journal.journal.enity.teacher.model.Teacher;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
@@ -60,5 +58,10 @@ public class Teacher_DAO_implementation implements Teacher_DAO_interface {
             result.add(new Teacher((Integer) row[0], (Integer) row[1], (String) row[2]));
         }
         return result;
+    }
+
+    @Override
+    public List<Teacher> findAllByStudentId(int id_student) {
+        return null;
     }
 }

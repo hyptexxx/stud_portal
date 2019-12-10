@@ -27,4 +27,9 @@ public class Teacher_implementation implements Teacher_service_interface {
     public List<Teacher> findAllByKafedrId(int id_kaf) {
         return teacher_dao_interface.findAllByKafedrId(id_kaf);
     }
+
+    @Override
+    public List<Teacher> findAllByStudentId(int id_student) {
+        return teacher_dao_interface.findAllByStudentId(id_student);
+    }
 }
