@@ -16,6 +16,7 @@
     margin: 24px 0px -9px 24px;
     flex-direction: column;
     box-shadow: -10px 3px 13px #1c1c42;
+    transition: all .3s ease-out;
 }
 
 .left-side-menu-component span {
@@ -39,4 +40,7 @@
     background: #ffffff;
     border: 3px solid #7373b8;
     color: #000 !important;
+}
+.left-side-menu-component:hover{
+    box-shadow: 0 0 40px 0px #090920;
 }

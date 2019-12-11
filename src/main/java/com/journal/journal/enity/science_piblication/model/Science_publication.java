@@ -29,4 +29,7 @@ public class Science_publication {
 
     @Column(name = "user_id")
     private int user_id;
+
+    @Column(name = "teacher_id")
+    private Integer teacher_id;
 }

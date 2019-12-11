@@ -58,7 +58,8 @@
                     id_publication: 0,
                     name: '',
                     text: '',
-                    user_id: 0
+                    user_id: 0,
+                    teacher_id:0
                 }]
                 , studentFilter: {}
                 , teacherFilter: {}
