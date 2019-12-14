@@ -29,8 +29,10 @@
             </div>
             <div class="right-side-content-body">
                 <article class="entity" v-for="item in publications">
-                    <input type="text" class="main-font entity-input fio" placeholder="Название публицации" :value="item.name"/>
-                    <input type="text" class="main-font entity-input nr" placeholder="Текст публикации" :value="item.text"/>
+                    <input type="text" class="main-font entity-input fio" placeholder="Название публицации"
+                           :value="item.name"/>
+                    <input type="text" class="main-font entity-input nr" placeholder="Текст публикации"
+                           :value="item.text"/>
                 </article>
             </div>
         </section>
@@ -44,10 +46,10 @@
         data: function () {
             return {
                 student: [{
-                    user_id:0,
-                    fio:'',
-                    id_napr:0,
-                    id_category:0
+                    user_id: 0,
+                    fio: '',
+                    id_napr: 0,
+                    id_category: 0
                 }],
                 nr: [{
                     fio: '',
@@ -59,7 +61,7 @@
                     name: '',
                     text: '',
                     user_id: 0,
-                    teacher_id:0
+                    teacher_id: 0
                 }]
                 , studentFilter: {}
                 , teacherFilter: {}
@@ -82,16 +84,17 @@
                 this.teacherFilter = document.getElementById('nr')
                 params.append('id_teacher', this.teacherFilter.value)
                 params.append('id_student', e.target.value)
-                axios.post('/api/refreshFilterNr/Publications', params).then(response => {
-                    this.nr = response.data
-                })
+                // axios.post('/api/refreshFilterNr/Publications', params).then(response => {
+                //     this.nr = response.data
+                // })
                 axios.post('/api/doFilter/Publications', params).then(response => {
                     this.publications = response.data
                 })
+                console.log(e.target.value + " <-S=====T-> " + this.teacherFilter.value)
             },
             nrChange: function (e) {
                 let params = new URLSearchParams();
-                this.studentFilter = document.getElementById('studentFilter')
+                this.studentFilter = document.getElementById('student')
                 params.append('id_teacher', e.target.value)
                 params.append('id_student', this.studentFilter.value)
                 axios.post('/api/refreshFilterStudent/Publications', params).then(response => {
@@ -100,6 +103,7 @@
                 axios.post('/api/doFilter/Publications', params).then(response => {
                     this.publications = response.data
                 })
+                console.log(e.target.value + " <-T=====S-> " + this.studentFilter.value)
             }
         },
         name: "Publications"

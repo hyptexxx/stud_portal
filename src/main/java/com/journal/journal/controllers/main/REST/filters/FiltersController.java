@@ -78,9 +78,9 @@ public class FiltersController {
         if (id_student > 0 && id_teacher < 0) {
             result = science_publication_service_interface.findAllByStudentId(id_student);
         }
-        if (id_student > 0 && id_teacher > 0) {
-            result = science_publication_service_interface.findAllByStudentAndNrId(id_student, id_teacher);
-        }
+//        if (id_student > 0 && id_teacher > 0) {
+//            result = science_publication_service_interface.findAllByStudentAndNrId(id_student, id_teacher);
+//        }
         return result;
     }
 

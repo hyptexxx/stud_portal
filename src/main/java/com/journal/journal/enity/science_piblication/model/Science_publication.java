@@ -28,7 +28,7 @@ public class Science_publication {
     private String text;
 
     @Column(name = "user_id")
-    private int user_id;
+    private Integer user_id;
 
     @Column(name = "teacher_id")
     private Integer teacher_id;
