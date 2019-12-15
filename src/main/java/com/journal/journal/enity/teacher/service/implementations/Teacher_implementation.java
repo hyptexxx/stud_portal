@@ -32,4 +32,9 @@ public class Teacher_implementation implements Teacher_service_interface {
     public List<Teacher> findAllByStudentId(int id_student) {
         return teacher_dao_interface.findAllByStudentId(id_student);
     }
+
+    @Override
+    public List<Teacher> findAllByNaprId(int id_napr) {
+        return teacher_dao_interface.findAllByNaprId(id_napr);
+    }
 }

@@ -37,3 +37,8 @@
     appearance: none;
     text-align-last:center;
 }
+.sendUser{
+    width: 234px;
+    height: 10px;
+    background-color: #2f2f6b;
+}

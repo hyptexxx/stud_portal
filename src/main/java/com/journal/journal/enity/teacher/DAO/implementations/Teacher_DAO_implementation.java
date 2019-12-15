@@ -64,4 +64,23 @@ public class Teacher_DAO_implementation implements Teacher_DAO_interface {
     public List<Teacher> findAllByStudentId(int id_student) {
         return null;
     }
+
+    @Override
+    public List<Teacher> findAllByNaprId(int id_napr) {
+        String SQL = "select\n" +
+                "    t.id_teacher,\n" +
+                "    t.id_n,\n" +
+                "    t.fio\n" +
+                "from teachers t\n" +
+                "where t.id_n = :id_napr";
+        Session session = hibernateUtils.getSessionFactory().openSession();
+        List<Teacher> result = new ArrayList<>();
+        Transaction trans = session.beginTransaction();
+        List<Object[]> results = session.createSQLQuery(SQL) .setParameter("id_napr", id_napr).list();
+        trans.commit();
+        for (Object[] row : results) {
+            result.add(new Teacher((Integer) row[0], (Integer) row[1], (String) row[2]));
+        }
+        return result;
+    }
 }
