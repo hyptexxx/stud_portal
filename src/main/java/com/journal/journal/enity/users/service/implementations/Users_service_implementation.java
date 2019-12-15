@@ -26,4 +26,9 @@ public class Users_service_implementation implements Users_service_interface {
     public List<Users> findAllByTeacherId(int id_teacher) {
         return users_dao_interface.findAllByTeacherId(id_teacher);
     }
+
+    @Override
+    public void updateUserByUserId(String fio, int napr, int category, int user_id) {
+        users_dao_interface.updateUserByUserId(fio, napr, category, user_id);
+    }
 }

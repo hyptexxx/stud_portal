@@ -29,21 +29,30 @@
             </div>
             <div class="right-side-content-body">
                 <article class="entity" v-for="item in Articles" :data-user-id="item.id_user">
-                    <form name="articleForm" method="post" class="articleForm" :data-user-id="item.id_user" style="display: inherit; justify-content: center;">
-                        <input type="text"  name="student" class="main-font entity-input fio" placeholder="ФИО" :value="item.fio_user"/>
-                        <select name="teacher" class="main-font entity-input fio" @click="getTeacherList($event)" :data-id-napr="item.id_napr">
+                    <form name="articleForm" @submit.prevent="sendUser($event)" class="articleForm entity"
+                          :data-user-id="item.id_user"
+                          style="display: inherit; border: none;justify-content: center;">
+                        <input :data-user-id="item.id_user" type="text" name="student"
+                               class="main-font entity-input fio" placeholder="ФИО" :value="item.fio_user"/>
+                        <select :data-user-id="item.id_user" name="teacher" class="main-font entity-input fio"
+                                @click="getTeacherList($event)" :data-id-napr="item.id_napr">
                             <option :value="item.id_teacher">По умолчанию: {{item.fio_teacher}}</option>
-                            <option v-for="iterator in TeacherList" :value="iterator.id_teacher">{{iterator.fio}}</option>
+                            <option v-for="iterator in TeacherList" :value="iterator.id_teacher">{{iterator.fio}}
+                            </option>
                         </select>
-                        <select name="napr" class="main-font entity-input fio" @click="getNaprList()">
+                        <select :data-user-id="item.id_user" name="napr" class="main-font entity-input fio"
+                                @click="getNaprList()">
                             <option :value="item.id_napr">По умолчанию: {{item.name_napr}}</option>
                             <option v-for="iterator in NaprList" :value="iterator.id_napr">{{iterator.name}}</option>
                         </select>
-                        <select name="category" class="main-font entity-input fio" @click="getCategoryList()">
+                        <select :data-user-id="item.id_user" name="category" class="main-font entity-input fio"
+                                @click="getCategoryList()">
                             <option :value="item.id_category">По умолчанию: {{item.category}}</option>
-                            <option v-for="iterator in CategoryList" :value="iterator.id_category">{{iterator.category}}</option>
+                            <option v-for="iterator in CategoryList" :value="iterator.id_category">
+                                {{iterator.category}}
+                            </option>
                         </select>
-                        <div class="sendUser" @click="sendUser($event)" :data-user-id="item.id_user"></div>
+                        <input type="submit" class="sendUser entity-input">
                     </form>
                 </article>
             </div>
@@ -135,27 +144,31 @@
                 params.append("id_napr", e.target.getAttribute("data-id-napr"))
                 axios.post('/api/getTeacherListByNaprId', params).then(response => {
                     this.TeacherList = response.data
-                    console.log(this.TeacherList);
                 })
             },
             getNaprList: function () {
                 axios.post('/api/getNaprList').then(response => {
                     this.NaprList = response.data
-                    console.log(this.NaprList);
                 })
             },
             getCategoryList: function () {
                 axios.post('/api/getCategoryList').then(response => {
                     this.CategoryList = response.data
-                    console.log(this.CategoryList);
                 })
-            }
-            ,
+            },
             sendUser: function (e) {
-                let user_id = e.target.getAttribute("data-user-id")
-                let form  = e.target.parentNode
-                console.log(e.target.parentNode)
-                console.log(new FormData(form))
+                let params = new URLSearchParams();
+                const fio = document.querySelector('input[data-user-id="' + e.target.getAttribute("data-user-id") + '"').value;
+                const teacher = document.querySelector('select[name="teacher"][data-user-id="' + e.target.getAttribute("data-user-id") + '"').value;
+                const napr = document.querySelector('select[name="napr"][data-user-id="' + e.target.getAttribute("data-user-id") + '"').value;
+                const category = document.querySelector('select[name="category"][data-user-id="' + e.target.getAttribute("data-user-id") + '"').value;
+                params.append("fio", fio)
+                params.append("teacher", teacher)
+                params.append("napr", napr)
+                params.append("category", category)
+                params.append("user_id", e.target.getAttribute("data-user-id"))
+                axios.post('/api/setArticle', params).then(response => {
+                })
             }
         },
         name: "articlesandfilters",

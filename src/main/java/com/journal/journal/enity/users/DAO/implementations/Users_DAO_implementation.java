@@ -6,6 +6,7 @@ import com.journal.journal.enity.users.DAO.interfaces.Users_DAO_interface;
 import com.journal.journal.enity.users.model.Users;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.TypedQuery;
@@ -56,5 +57,23 @@ public class Users_DAO_implementation implements Users_DAO_interface {
             result.add(new Users((Integer) row[0], (String) row[1], (Integer) row[2], (Integer) row[3]));
         }
         return result;
+    }
+
+    @Override
+    public void updateUserByUserId(String fio, int napr, int category, int user_id) {
+        Session session = hibernateUtils.getSessionFactory().openSession();
+        session.getTransaction().begin();
+        Query query = session.createSQLQuery(
+                "update users\n" +
+                        "        set fio         = :fio,\n" +
+                        "                id_napr = :napr,\n" +
+                        "                id_category = :category\n" +
+                        "        WHERE user_id = :user_id");
+        query.setParameter("fio", fio);
+        query.setParameter("napr", napr);
+        query.setParameter("category", category);
+        query.setParameter("user_id", user_id);
+        int result = query.executeUpdate();
+        session.getTransaction().commit();
     }
 }

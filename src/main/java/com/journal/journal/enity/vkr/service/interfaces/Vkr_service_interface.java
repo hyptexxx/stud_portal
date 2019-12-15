@@ -1,4 +1,5 @@
 package com.journal.journal.enity.vkr.service.interfaces;
 
-public class Vkr_service_interface {
+public interface Vkr_service_interface {
+    void updateVkrByUserId(int user_id,int teacher);
 }

@@ -39,6 +39,10 @@
 }
 .sendUser{
     width: 234px;
-    height: 10px;
+    height: 29px;
+    color: #fff;
     background-color: #2f2f6b;
+    border: navajowhite;
+    box-shadow: 0 0 5px #2f2f6b5c;
+    border-radius: 5px;
 }
