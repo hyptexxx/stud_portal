@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class Users {
 
     @Id
-    @GeneratedValue
+//    @GeneratedValue
     @Column(name = "user_id")
     private int user_id;
 

@@ -8,7 +8,6 @@ import com.journal.journal.enity.teacher.model.Teacher;
 import com.journal.journal.enity.teacher.service.interfaces.Teacher_service_interface;
 import com.journal.journal.enity.users.service.interfaces.Users_service_interface;
 import com.journal.journal.enity.vkr.service.interfaces.Vkr_service_interface;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Teacher {
 
     @Id
-    @GeneratedValue
+//    @GeneratedValue
     @Column(name = "id_teacher")
     private int id_teacher;
 

@@ -167,8 +167,7 @@
                 params.append("napr", napr)
                 params.append("category", category)
                 params.append("user_id", e.target.getAttribute("data-user-id"))
-                axios.post('/api/setArticle', params).then(response => {
-                })
+                axios.post('/api/setArticle', params).then(response => { })
             }
         },
         name: "articlesandfilters",

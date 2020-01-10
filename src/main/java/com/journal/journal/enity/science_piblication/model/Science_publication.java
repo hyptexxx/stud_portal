@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class Science_publication {
 
     @Id
-    @GeneratedValue
+//    @GeneratedValue
     @Column(name = "id_science_publication")
     private int id_science_publication;
 

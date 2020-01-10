@@ -10,6 +10,7 @@ import com.journal.journal.enity.teacher.model.Teacher;
 import com.journal.journal.enity.teacher.service.interfaces.Teacher_service_interface;
 import com.journal.journal.enity.users.model.Users;
 import com.journal.journal.enity.users.service.interfaces.Users_service_interface;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 

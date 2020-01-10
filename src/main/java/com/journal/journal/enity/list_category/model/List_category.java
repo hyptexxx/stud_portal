@@ -21,7 +21,7 @@ public class List_category {
 
     @Id
     @Column("id_category")
-    @GeneratedValue
+//    @GeneratedValue
     private int id_category;
 
 

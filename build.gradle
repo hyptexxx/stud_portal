@@ -37,6 +37,7 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
 	compile 'mysql:mysql-connector-java'
+	compile "org.flywaydb:flyway-core:6.1.4"
 	compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.22'
 	compile group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.4.6.Final'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {

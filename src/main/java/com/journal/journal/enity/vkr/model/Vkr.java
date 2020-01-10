@@ -18,7 +18,7 @@ import java.util.Date;
 public class Vkr {
 
     @Id
-    @GeneratedValue
+//    @GeneratedValue
     @Column(name = "id_vkr")
     private int id_vkr;
 
@@ -27,7 +27,6 @@ public class Vkr {
 
     @Column(name = "user_id")
     private int user_id;
-
 
     @Column(name = "id_teacher")
     private int id_teacher;

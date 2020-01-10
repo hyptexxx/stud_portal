@@ -29,13 +29,13 @@ public class Users_DAO_implementation implements Users_DAO_interface {
 
     @Override
     public List<Users> findAll() {
-        Session session = hibernateUtils.getSessionFactory().openSession();
-        CriteriaBuilder cb = session.getCriteriaBuilder();
-        CriteriaQuery<Users> cq = cb.createQuery(Users.class);
-        Root<Users> rootEntry = cq.from(Users.class);
-        CriteriaQuery<Users> all = cq.select(rootEntry);
-        TypedQuery<Users> allQuery = session.createQuery(all);
-        return allQuery.getResultList();
+        Session session = hibernateUtils.getSessionFactory().openSession(); // открытие сессии
+        CriteriaBuilder cb = session.getCriteriaBuilder(); // инициализация объекта для составления запроса
+        CriteriaQuery<Users> cq = cb.createQuery(Users.class); // добавление модели
+        Root<Users> rootEntry = cq.from(Users.class); // добавление модели
+        CriteriaQuery<Users> all = cq.select(rootEntry); // формирование запроса
+        TypedQuery<Users> allQuery = session.createQuery(all); // открытие транзакции и выполнение запроса
+        return allQuery.getResultList(); //получение ответа от сервера MySQL и закрытие транзакции
     }
 
     @Override

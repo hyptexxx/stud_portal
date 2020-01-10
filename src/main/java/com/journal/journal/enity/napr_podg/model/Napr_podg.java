@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class Napr_podg {
 
     @Id
-    @GeneratedValue
+//    @GeneratedValue
     @Column(name = "id_napr")
     private int id_napr;
 

@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class List_kafedr {
 
     @Id
-    @GeneratedValue
+//    @GeneratedValue
     @Column(name="id_kafedr")
     private int id_kafedr;
 

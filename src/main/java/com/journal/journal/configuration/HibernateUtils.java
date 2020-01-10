@@ -29,14 +29,14 @@ public class HibernateUtils {
                 StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder();
                 Properties settings = new Properties();
                 settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/journal?serverTimezone=UTC");
+                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/journal?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Moscow");
                 settings.put(Environment.USER, "root");
                 settings.put(Environment.PASS, "root");
-                settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
+                settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "org.springframework.orm.hibernate5.SpringSessionContext");
                 settings.put(Environment.SHOW_SQL, "true");
                 settings.put(Environment.FORMAT_SQL, "true");
-                settings.put(Environment.HBM2DDL_AUTO, "none");
+                settings.put(Environment.HBM2DDL_AUTO, "validate");
                 configuration.setProperties(settings);
                 configuration.addAnnotatedClass(List_category.class);
                 configuration.addAnnotatedClass(List_kafedr.class);
